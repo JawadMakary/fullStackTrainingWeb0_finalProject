@@ -27,6 +27,12 @@ var excelData_clients = xlsx.utils.sheet_to_json(clientsSheet);
 app.get("/clients", function (req, res) {
   res.send(excelData_clients);
 });
+// GET ALL DATA of the testimonials
+var testimonialsSheet = wBook.Sheets[wBook.SheetNames[3]];
+var excelData_testimonials = xlsx.utils.sheet_to_json(testimonialsSheet);
+app.get("/testimonials", function (req, res) {
+  res.send(excelData_testimonials);
+});
 app.listen(3030, () => {
   console.log("the server is running");
 });
