@@ -21,7 +21,12 @@ var excelData_categories = xlsx.utils.sheet_to_json(categoriesSheet);
 app.get("/categories", function (req, res) {
   res.send(excelData_categories);
 });
-
+// GET ALL DATA of the clients
+var clientsSheet = wBook.Sheets[wBook.SheetNames[2]];
+var excelData_clients = xlsx.utils.sheet_to_json(clientsSheet);
+app.get("/clients", function (req, res) {
+  res.send(excelData_clients);
+});
 app.listen(3030, () => {
   console.log("the server is running");
 });
