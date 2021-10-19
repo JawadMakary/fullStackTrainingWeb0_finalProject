@@ -1,8 +1,8 @@
 var servicesContainer = document.getElementById("servicesRow");
 //  fetch fct
-const getDataFromApi = () => {
+const getServicesDataFromApi = () => {
   fetch("http://localhost:3030/services")
-    .then((response) => response.json()) // Arrow functions
+    .then((response) => response.json())
     .then((json) => {
       json.forEach((entry) => {
         var servicesData = document.createElement("div");
@@ -13,13 +13,10 @@ const getDataFromApi = () => {
         <h4><a href="">${entry.service_name}</a></h4>
         <p>${entry.service_description}</p>
       </div>
-            
-             
-            
-             
+      
           `;
         servicesContainer.appendChild(servicesData);
       });
     });
 };
-getDataFromApi();
+getServicesDataFromApi();
